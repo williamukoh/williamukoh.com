@@ -24,7 +24,7 @@ function getURL(){
 <!DOCTYPE html>
 <html>
 <head>
-<title>williamukoh.com</title>
+<title>William Ukoh</title>
 <meta name="google-site-verification" content="5JXRa8MWPTK7Ld4skrEczp9GmPLV74UjKUqowttjSP0" />
 <style type="text/css">
 .hidden { display:none; height:1px; visibility:hidden; }
