@@ -30,8 +30,8 @@ const
   nunjucksRender = require('gulp-nunjucks-render'),
   cachebust = require('gulp-cache-bust');
 
-// development mode?
-devBuild = (process.env.NODE_ENV !== 'production'),
+  // development mode?
+  devBuild = (process.env.NODE_ENV !== 'production'),
 
   // folders
   folder = {
@@ -194,6 +194,7 @@ gulp.task('clean:html', function () {
 // cachebust
 gulp.task('html', function (cb) {
   cb();
+  //return gulp;
   return gulp.src(folder.dist + '**/*.html')
     .pipe(cachebust({
       type: 'timestamp'
