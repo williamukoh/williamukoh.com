@@ -100,6 +100,18 @@ main {
     font-family: "Nunito";
 }
 
+footer {
+
+  padding:2em 0 0;
+  text-align: center;
+  svg {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+
 .skip-link { display: none; }
 .svg-gfx { display: inline-block; position: relative; }
 .svg-gfx.hello-hand { bottom:-10px; }
@@ -161,6 +173,15 @@ main {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
+
+      footer {
+        font-size: 0.8rem;
+        position: absolute;
+        bottom:20px;
+        left:0;
+        right:0;
+        // width:100%;
       }
 
     }
