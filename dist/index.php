@@ -9,7 +9,7 @@
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1552087921075">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560100622730">
         
     </head>
     <body class="home">
@@ -46,8 +46,8 @@
                             William here.
                         </p>
 
-                        <p class="text--lg">I’m a Product Designer and Developer working at the crossroads of design, technology and business.</p>
-                        <p>In collaboration with individuals and forward-looking companies and organizations, I help shape and enhance digital products and services through a pragmatic design process that solves real needs and makes a difference.</p>
+                        <p class="text--lg">I’m a Product Designer and Developer working at the crossroads of design, software technology and business.</p>
+                        <p>In collaboration with individuals, forward-looking companies and organizations, I help shape and enhance digital products and services through a pragmatic design process that solves real needs and makes a difference.</p>
                         <p>I’m currently based in Lagos, Nigeria.
                             <span class="svg-gfx ng-flag">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="20" viewBox="0 0 27 20">
@@ -248,20 +248,6 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1552087921075"></script>
-        <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-602563-34']);
-        _gaq.push(['_setDomainName', '.williamukoh.com']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-      </script> 
+        <script src="assets/js/build.min.js?t=1560100622730"></script> 
     </body>
 </html>

@@ -28,7 +28,8 @@ const
   del = require('del'),
   sourcemaps = require('gulp-sourcemaps'),
   nunjucksRender = require('gulp-nunjucks-render'),
-  cachebust = require('gulp-cache-bust');
+  cachebust = require('gulp-cache-bust'),
+  ext_replace = require('gulp-ext-replace');
 
   // development mode?
   devBuild = (process.env.NODE_ENV !== 'production'),
@@ -36,7 +37,8 @@ const
   // folders
   folder = {
     src: 'src/',
-    dist: 'dist/'
+    dist: 'dist/',
+    local: 'local/'
   };
 
 // JavaScript processing
@@ -59,7 +61,7 @@ gulp.task('js', function (cb) {
     .pipe(uglify())
     // .pipe( concat('build.js') )
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(folder.dist + 'assets/js/'));
+    .pipe(gulp.dest(folder.local + 'assets/js/'));
 
 });
 
@@ -82,14 +84,14 @@ gulp.task('js', function (cb) {
 //     .pipe( uglify() )
 //     // .pipe( concat('build.js') )
 //     .pipe( sourcemaps.write( "." ) )
-//     .pipe( gulp.dest(folder.dist + 'assets/js/') );
+//     .pipe( gulp.dest(folder.local + 'assets/js/') );
 
 // });
 
 // image processing
 gulp.task('images', function () {
 
-  var dest = folder.dist + 'assets/img/';
+  var dest = folder.local + 'assets/img/';
 
   return gulp.src(folder.src + 'assets/img/**/*.+(png|jpg|jpeg|gif|svg)')
     .pipe(newer(dest)) // only if it's a new or updated image
@@ -130,12 +132,12 @@ gulp.task('sass+css', gulp.series('images', function () {
     // the order of the following plugins really matters( 1. process the css 2. remove unwanted stuff 3. concatenate)
     .pipe(postcss(postcssPlugins))
     .pipe(purgecss({
-      content: [folder.dist + 'assets/js/**/*.js', folder.dist + '**/*.html'],
+      content: [folder.local + 'assets/js/**/*.js', folder.local + '**/*.html'],
       whitelist: ['site-header', 'compact-header', 'no-header', 'full-height-header', 'grid-item--3', 'grid-item--2', 'grid-item']
     }))
     .pipe(concat('build.min.css'))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(folder.dist + 'assets/css/'))
+    .pipe(gulp.dest(folder.local + 'assets/css/'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -147,10 +149,24 @@ gulp.task('copy', function () {
 
   // nothing to do. just move the files
   // gulp.src( folder.src + 'assets/js/sw.js' )
-  //   .pipe( gulp.dest( folder.dist ) );
+  //   .pipe( gulp.dest( folder.local ) );
 
   return gulp.src([folder.src + 'assets/fonts/**/*', 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*'])
-    .pipe(gulp.dest(folder.dist + "assets/fonts"));
+    .pipe(gulp.dest(folder.local + "assets/fonts"));
+
+});
+
+// copy
+gulp.task('copy:to-dist', function (cb) {
+
+  // nothing to do. just move the files
+  // gulp.src( folder.src + 'assets/js/sw.js' )
+  //   .pipe( gulp.dest( folder.dist ) );
+
+  gulp.src( folder.local + 'assets/**/*')
+    .pipe( gulp.dest( folder.dist + 'assets/' ) );
+
+  cb();
 
 });
 
@@ -164,7 +180,7 @@ gulp.task('nunjucks', function () {
       path: [folder.src + 'templates']
     }))
     // output files build folder
-    .pipe(gulp.dest(folder.dist))
+    .pipe(gulp.dest(folder.local))
 });
 
 // browser-sync
@@ -172,10 +188,11 @@ gulp.task('browser-sync', function (cb) {
 
   browserSync.init({
     server: {
-      baseDir: folder.dist,
-      directory: true
+      baseDir: folder.local,
+      directory: false,
+      index: 'index.html'
     },
-    files: [folder.dist + "assets/**/*.css", folder.dist + "assets/**/*.js"],
+    files: [folder.local + "assets/**/*.css", folder.local + "assets/**/*.js"],
     open: false
   }, cb);
 
@@ -183,23 +200,39 @@ gulp.task('browser-sync', function (cb) {
 
 // clean "assets" directory
 gulp.task('clean:assets', function () {
-  return del(folder.dist + 'assets');
+  return del(folder.local + 'assets');
+});
+
+// clean "dist" directory
+gulp.task('clean:dist', function () {
+  return del( folder.dist + '**/*' );
 });
 
 // clean "html" files
 gulp.task('clean:html', function () {
-  return del(folder.dist + '*.html');
+  return del(folder.local + '*.html');
 });
 
 // cachebust
 gulp.task('html', function (cb) {
   cb();
   //return gulp;
-  return gulp.src(folder.dist + '**/*.html')
+  return gulp.src(folder.local + '**/*.html')
     .pipe(cachebust({
       type: 'timestamp'
     }))
-    .pipe(gulp.dest(folder.dist));
+    .pipe(gulp.dest(folder.local));
+
+});
+
+// rename to *.html to *.php
+gulp.task( 'rename:to-php', function(cb) {
+  
+  gulp.src( folder.local + '*.html')
+      .pipe( ext_replace('.php') )
+      .pipe( gulp.dest('dist') );
+  
+  cb();
 
 });
 
@@ -255,6 +288,10 @@ gulp.task('watch', function () {
 
 });
 
+// building for testing server locally
 gulp.task('build', gulp.series('clean:html', 'clean:assets', 'nunjucks', 'js', 'sass+css', 'copy', 'html', 'browser-sync', 'watch'));
+
+// deploy for production
+gulp.task('deploy', gulp.series( 'clean:dist', 'copy:to-dist', 'rename:to-php' ) );
 
 gulp.task('default', gulp.series('build'));
