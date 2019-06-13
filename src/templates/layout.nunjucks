@@ -1,10 +1,11 @@
+<!-- Last generated: @@date-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{{ page_title }}</title>
-        <meta name="description" content="I’m a Product Designer and Developer working at the crossroads of design, technology and business.">
+        <meta name="description" content="A Product Designer and Developer working at the crossroads of design, software technology and business.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         {# <link rel="apple-touch-icon" href="apple-touch-icon.png"> #}
@@ -26,6 +27,7 @@
 
         </div>
 
-        <script src="assets/js/build.min.js"></script> 
+        <script src="assets/js/build.min.js"></script>
+        <!-- @@ga -->
     </body>
 </html>

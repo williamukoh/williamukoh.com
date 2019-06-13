@@ -145,9 +145,8 @@ footer {
     }
     article {
       @include breakpoint( '(min-width:800px)') {
-        width:65%;
+        width:63%;
       }
-
     }
     .bg {
 

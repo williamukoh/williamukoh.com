@@ -1,15 +1,16 @@
+<!-- Last generated: Thu Jun 13 2019 13:19:54 GMT+0100 (WAT)-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>William Ukoh - Product and Designer based in Lagos, Nigeria</title>
-        <meta name="description" content="I’m a Product Designer and Developer working at the crossroads of design, technology and business.">
+        <title>William Ukoh - Product Designer and Developer based in Lagos, Nigeria</title>
+        <meta name="description" content="A Product Designer and Developer working at the crossroads of design, software technology and business.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1560100622730">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560428397748">
         
     </head>
     <body class="home">
@@ -21,7 +22,7 @@
             
 
             
-    
+        
     <div class="main-wrapper">
 
         <main role="main" id="main">
@@ -248,6 +249,9 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1560100622730"></script> 
+        <script src="assets/js/build.min.js?t=1560428397748"></script>
+        <script>
+// Google Analytics
+</script>
     </body>
 </html>
