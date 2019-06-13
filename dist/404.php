@@ -1,4 +1,4 @@
-<!-- Last generated: Thu Jun 13 2019 13:19:54 GMT+0100 (WAT)-->
+<!-- Last generated: Thu Jun 13 2019 13:54:48 GMT+0100 (WAT)-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
@@ -10,7 +10,7 @@
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1560428397730">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560430492356">
         
     </head>
     <body class="error">
@@ -58,9 +58,13 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1560428397730"></script>
-        <script>
-// Google Analytics
+        <script src="assets/js/build.min.js?t=1560430492356"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-602563-34"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-602563-34');
 </script>
     </body>
 </html>
