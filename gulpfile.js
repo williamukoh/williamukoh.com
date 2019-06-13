@@ -1,6 +1,7 @@
 // Gulp.js configuration
 const
   // modules
+  fs = require( 'fs'),
   gulp = require('gulp'),
   argv = require('yargs').argv,
   spawn = require('child_process').spawn,
@@ -29,7 +30,8 @@ const
   sourcemaps = require('gulp-sourcemaps'),
   nunjucksRender = require('gulp-nunjucks-render'),
   cachebust = require('gulp-cache-bust'),
-  ext_replace = require('gulp-ext-replace');
+  ext_replace = require('gulp-ext-replace'),
+  replace = require( 'gulp-string-replace' );
 
   // development mode?
   devBuild = (process.env.NODE_ENV !== 'production'),
@@ -173,12 +175,16 @@ gulp.task('copy:to-dist', function (cb) {
 // nunjucks
 gulp.task('nunjucks', function () {
 
+  var dest = folder.local;
+
   // Gets .html and .nunjucks files in pages
   return gulp.src(folder.src + 'pages/**/*.+(html|nunjucks|njk)')
     // Renders template with nunjucks
     .pipe(nunjucksRender({
       path: [folder.src + 'templates']
     }))
+    // .pipe( newer( dest ))
+    .pipe( replace( '@@date', new Date() ) )
     // output files build folder
     .pipe(gulp.dest(folder.local))
 });
@@ -228,9 +234,12 @@ gulp.task('html', function (cb) {
 // rename to *.html to *.php
 gulp.task( 'rename:to-php', function(cb) {
   
+  var _ga = fs.readFileSync( folder.src + 'includes/ga.html', 'utf8' );
+
   gulp.src( folder.local + '*.html')
+      .pipe( replace( '<!-- @@ga -->', _ga ) )
       .pipe( ext_replace('.php') )
-      .pipe( gulp.dest('dist') );
+      .pipe( gulp.dest( folder.dist ) );
   
   cb();
 

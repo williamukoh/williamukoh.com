@@ -1,11 +1,12 @@
 <!-- index.nunjucks -->
+<!-- stuuf here -->
 {% set body_class = "home" %}
-{% set page_title = "William Ukoh - Product and Designer based in Lagos, Nigeria" %}
+{% set page_title = "William Ukoh - Product Designer and Developer based in Lagos, Nigeria" %}
 
 {% extends "layout.nunjucks" %}
 
 {% block content %}
-    
+        
     <div class="main-wrapper">
 
         <main role="main" id="main">

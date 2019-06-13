@@ -1,0 +1,25 @@
+<!-- index.nunjucks -->
+<!-- stuuf here -->
+{% set body_class = "error" %}
+{% set page_title = "404 Error  - Page Not Found" %}
+
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+        
+    <div class="main-wrapper">
+
+        <main role="main" id="main">
+
+            <div class="page-content">
+
+                <h1>Page Not Found</h1>
+
+            </div>
+
+            
+        </main>
+
+    </div>
+
+{% endblock %}
