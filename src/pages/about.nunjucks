@@ -1,0 +1,34 @@
+<!-- index.nunjucks -->
+<!-- stuuf here -->
+{% set body_class = "about" %}
+{% set page_title = "About Me - Product Designer and Developer based in Lagos, Nigeria" %}
+
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+        
+    <div class="main-wrapper">
+
+        <main role="main" id="main">
+
+            <div class="page-content">
+
+                <article> 
+
+                    <div class="text--md">
+
+                        <p>Hello</p>
+
+                        <p class="text--lg">I’m a Product Designer and Developer working at the crossroads of design, software technology and business.</p>
+
+                    </div>
+                
+                </article>
+            
+            </div>
+            
+        </main>
+
+    </div>
+
+{% endblock %}

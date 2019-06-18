@@ -8,7 +8,15 @@ $link-color: #000;
 $body-color:#434343;
 $dark-gray:#222;
 
-$font-stack: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$font-stack: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Oxygen-Sans,
+Ubuntu,
+Cantarell,
+"Helvetica Neue",
+sans-serif;
 // $max-width:1200px;
 // $max-width-content:940px;
 $link: $brand-color;
@@ -31,7 +39,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  height:100%;
+  height: 100%;
   background-color: #F5F5F5;
 }
 
@@ -43,13 +51,19 @@ body {
   font-weight: 300;
   line-height: 1.4;
   word-wrap: break-word;
-  padding:0 15px;
+  padding: 0 15px;
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 img {
   border-style: none;
 }
-strong { color: unset; }
+
+strong {
+  color: unset;
+}
 
 img,
 video {
@@ -60,18 +74,26 @@ video {
 a {
   color: $link-color;
   text-decoration: none;
-  border-bottom:1.5px dotted #4CB8EF;
+  border-bottom: 1.5px dotted #4CB8EF;
+  transition: 0.3s all;
 
   &:hover {
-    border-bottom-color:red;
+    border-bottom-color: red;
   }
 }
-a, a:before, a:after, button {
+
+a,
+a:before,
+a:after,
+button {
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
 
-a.button, .button { text-decoration: none; }
+a.button,
+.button {
+  text-decoration: none;
+}
 
 h1,
 h2,
@@ -86,7 +108,7 @@ h6 {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 24px; 
   font-size: 1.5rem;
   font-weight: 300;
 }
@@ -97,13 +119,14 @@ p {
 }
 
 main {
-    font-family: "Nunito";
+  font-family: "Nunito";
 }
 
 footer {
 
-  padding:2em 0 0;
+  padding: 2em 0 0;
   text-align: center;
+
   svg {
     position: relative;
     top: 5px;
@@ -112,79 +135,256 @@ footer {
   }
 }
 
-.skip-link { display: none; }
-.svg-gfx { display: inline-block; position: relative; }
-.svg-gfx.hello-hand { bottom:-10px; }
-.svg-gfx.ng-flag { bottom:-4px; }
+.skip-link {
+  display: none;
+}
 
-/* Home Page */
-.home {
-    .page-content {
-        position: relative;
-        padding-top:1em;
-        max-width: 900px;
-        margin-left:auto;
-        margin-right:auto;
+.svg-gfx {
+  display: inline-block;
+  position: relative;
+}
 
-        @include breakpoint(desktop) {
-          max-width: 1100px;
-        }
+.svg-gfx.hello-hand {
+  bottom: -10px;
+}
+
+.svg-gfx.ng-flag {
+  bottom: -4px;
+}
+
+.header {
+
+  a.menu-trigger {
+    display: block;
+    width: 35px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    text-decoration: none;
+    border: none !important;
+    z-index: 999;
+
+    @include breakpoint('(min-width: 37.5em)') {      
+      display: none;
     }
-    ul.social-icons {
-      margin:0;
-      padding:2em 0 1em;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .nav-wrapper {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 200px;
+    background: #384B5D;
+    z-index: 1;
+    margin-right: -15px;
+    transform: translate3d(+100%, 0, 0);
+
+    @include breakpoint('(min-width: 37.5em)') {
+
+      position: absolute;
+      height: auto;
+      transform: none;
+      margin-right: 0;
+      width: auto;
+      background: none;
+      top: 20px;
+
+    }
+  }
+
+}
+
+.nav-wrapper {
+
+  // position: fixed;
+  // height: 100vh;
+  // top: 0;
+  // right: 0;
+  // width: 200px;
+  // background: #525252;
+  // z-index: 1;
+  // margin-right: -15px;
+  // transform: translate3d(+100%, 0, 0);
+
+  nav.primary-nav {
+
+    ul {
+
+      margin: 4em 0 0;
+      padding: 0;
+      color: #fff;
+
+      @include breakpoint('(min-width: 37.5em)') {
+        margin: 0;
+        color: $body-color;
+      }
 
       li {
-        display: inline;
-        margin-right: 10px; 
+        border-bottom: 1px dotted rgba(255,255,255,0.5);
+
+        @include breakpoint('(min-width: 37.5em)') {
+          border-bottom: none;
+          display: inline-block;
+        }
       }
 
       a {
-        border-bottom:none;
-      }
-    }
-    article {
-      @include breakpoint( '(min-width:800px)') {
-        width:63%;
-      }
-    }
-    .bg {
-
-      display: none;
-
-      @include breakpoint( '(min-width:800px)' ) {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: none;
         display: block;
-        position: absolute;
-        width:30%;
-        top:80px;
-        right:20px;
-      }
-    }
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: 500;
 
-    @include breakpoint('(min-width: 70em) and ( min-height:650px)') { 
-      
-      position: relative;
-      height:100%;
-
-      .main-wrapper {
-        width: 1100px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      footer {
-        font-size: 0.8rem;
-        position: absolute;
-        bottom:20px;
-        left:0;
-        right:0;
-        // width:100%;
+        @include breakpoint('(min-width: 37.5em)') {
+          color: $body-color;
+          
+          &:hover {
+            color: #000;
+          }
+        }
       }
 
     }
+  }
 }
 
+.page-wrapper {
+  height: 100%;
+  will-change: transform;
+  transition: 0.3s transform;
+}
 
+.main-wrapper {
+  transition: 0.3s transform;
+}
 
+.menu-open {
+
+  body {
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  .main-wrapper, .footer-wrapper {
+    transform: perspective(1000px) translateZ(-100px);
+    // filter: blur(1px);
+  }
+
+  .nav-wrapper {
+    // transform: translate3d(-200px, 0, 0);
+    // box-shadow: -4px 0 16px rgba(0, 0, 0, .2);
+    box-shadow: -2px 0 6px rgba(0,0,0,0.3);
+  }
+
+  .page-wrapper {
+    
+    transform: translateX(-200px);
+
+    &:before {
+      display: block;
+      content: '';
+      background: rgba(0, 0, 0, 0.2);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: -15px;
+    }
+  }
+
+}
+
+/* Home Page */
+.home {
+  .page-content {
+    position: relative;
+    padding-top: 1em;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint(desktop) {
+      max-width: 1100px;
+    }
+  }
+
+  ul.social-icons {
+    margin: 0;
+    padding: 2em 0 1em;
+
+    li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    a {
+      border-bottom: none;
+    }
+  }
+
+  article {
+    @include breakpoint('(min-width:800px)') {
+      width: 63%;
+    }
+  }
+
+  .bg {
+
+    display: none;
+
+    @include breakpoint('(min-width:800px)') {
+      display: block;
+      position: absolute;
+      width: 30%;
+      top: 80px;
+      right: 20px;
+    }
+  }
+
+  
+
+  @include breakpoint('(min-width: 48em) and ( min-height:550px)') {
+
+    .main-wrapper {
+      width:100%;
+      padding: 0 2em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    footer {
+      font-size: 0.8rem;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      // width:100%;
+    }
+ 
+  }
+  
+  @include breakpoint('(min-width: 70em) and ( min-height:650px)') {
+
+    position: relative;
+    height: 100%;
+
+    .main-wrapper {
+      width: 1100px;
+      padding: 0;
+    }    
+
+  }
+}
