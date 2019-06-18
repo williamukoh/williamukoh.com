@@ -142,7 +142,7 @@
                 </article>
 
                 <div class='bg'>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 370 413">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" viewBox="0 0 370 413">
                             <defs>
                                 <pattern id="bg-b" width="135.558" height="135.558" x="29.442" y="-58.143" patternUnits="userSpaceOnUse">
                                 <use transform="scale(.68811)" xlink:href="#bg-a"/>
