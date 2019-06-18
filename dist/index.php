@@ -1,4 +1,4 @@
-<!-- Last generated: Thu Jun 13 2019 13:54:48 GMT+0100 (WAT)-->
+<!-- Last generated: @@date-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
@@ -10,7 +10,7 @@
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1560430492360">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560872338996">
         
     </head>
     <body class="home">
@@ -19,7 +19,15 @@
 
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-            
+            <div class="header-wrapper">
+
+    <header role="banner" class="header">
+
+        
+
+    </header>
+
+</div>
 
             
         
@@ -158,7 +166,7 @@
                 </article>
 
                 <div class='bg'>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" viewBox="0 0 370 413">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" viewBox="0 0 370 413">
                             <defs>
                                 <pattern id="bg-b" width="135.558" height="135.558" x="29.442" y="-58.143" patternUnits="userSpaceOnUse">
                                 <use transform="scale(.68811)" xlink:href="#bg-a"/>
@@ -233,7 +241,7 @@
 
             <div class="footer-wrapper">
 
-    <footer class="text--sm">
+    <footer class="text--sm" role="contentinfo">
         Design and 
         <svg height="20" class="fill-gray" aria-label="code" viewBox="0 0 14 16" width="17" role="img">
             <path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path>
@@ -249,7 +257,7 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1560430492360"></script>
+        <script src="assets/js/build.min.js?t=1560872338996"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-602563-34"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

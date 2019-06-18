@@ -1,4 +1,4 @@
-<!-- Last generated: Thu Jun 13 2019 13:54:48 GMT+0100 (WAT)-->
+<!-- Last generated: @@date-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
@@ -10,7 +10,7 @@
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1560430492356">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560872338991">
         
     </head>
     <body class="error">
@@ -19,7 +19,32 @@
 
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-            
+            <div class="header-wrapper">
+
+    <header role="banner" class="header">
+
+        <a class="menu-trigger">
+            <svg version="1.1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path d="m0 0h48v48h-48z" fill="none"/>
+                <path d="m6 36h36v-4h-36v4zm0-10h36v-4h-36v4zm0-14v4h36v-4h-36z"/>
+            </svg>
+        </a>
+
+        <div class="nav-wrapper">
+
+            <nav role="navigation" class="primary-nav nav">
+                <ul>
+                    <li><a href="/?ref=home">home</a>
+                    <li><a href="/about.html">about me</a>
+                    <li><a href="/resume.html">resume (pdf)</a>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+</div>
 
             
         
@@ -42,7 +67,7 @@
 
             <div class="footer-wrapper">
 
-    <footer class="text--sm">
+    <footer class="text--sm" role="contentinfo">
         Design and 
         <svg height="20" class="fill-gray" aria-label="code" viewBox="0 0 14 16" width="17" role="img">
             <path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path>
@@ -58,7 +83,7 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1560430492356"></script>
+        <script src="assets/js/build.min.js?t=1560872338991"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-602563-34"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
