@@ -30,7 +30,7 @@ ready( function() {
     document.querySelector('.page-wrapper').addEventListener( 'click', function($e) {
         if ( _rootElem.classList.contains( 'menu-open' ) ) {
             triggerEvent( 'click', _menu );
-            $e.preventDefault();
+            //$e.preventDefault();
         }
         
     }, false);
