@@ -1,4 +1,4 @@
-<!-- Last generated: Wed Jun 19 2019 21:44:12 GMT+0100 (WAT)-->
+<!-- Last generated: Wed Jun 19 2019 21:53:51 GMT+0100 (WAT)-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
@@ -10,7 +10,7 @@
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1560973737988">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560977480220">
 
         
     <meta http-equiv="refresh" content="3;url=/downloads/williamukoh-portfolio.pdf" />
@@ -95,21 +95,13 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1560973737988"></script>
+        <script src="assets/js/build.min.js?t=1560977480220"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-602563-34"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-602563-34');
-  
-  function ready(fn) {
-    if (document.readyState != 'loading'){
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
-  }
 
   window.onload =  function() {
     var _ctas =
