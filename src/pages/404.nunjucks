@@ -1,7 +1,7 @@
 <!-- index.nunjucks -->
 <!-- stuuf here -->
-{% set body_class = "error" %}
-{% set page_title = "404 Error  - Page Not Found" %}
+{% set body_class = "error page" %}
+{% set page_title = "Page Not Found" %}
 
 {% extends "layout.nunjucks" %}
 
@@ -13,7 +13,9 @@
 
             <div class="page-content">
 
-                <h1>Page Not Found</h1>
+                <h1 class="has-text-weight-bold is-uppercase has-text-danger">Page Not Found</h1>
+                <p>The link that brought you here may be broken or the page may have been removed.</p>
+                <p><a href="/?ref=404">Visit the Home Page</a></p>
 
             </div>
 

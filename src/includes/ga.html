@@ -4,4 +4,29 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-602563-34');
+
+  window.onload =  function() {
+    var _ctas =
+    Array.prototype.filter.call(
+      document.querySelectorAll( "a" ),
+      function(element) {
+        return Array.prototype.some.call(
+          element.attributes,
+          function(attr) {
+            return attr.nodeName.startsWith("data-ga-");
+          }
+        );
+      }
+    );
+
+    _ctas.forEach( function(_cta) {
+      ga( 'gtag_UA_602563_34.send', {
+        hitType: 'event',
+        eventCategory: _cta.getAttribute( 'data-ga-cat'),
+        eventAction: _cta.getAttribute( 'data-ga-action'),
+        eventLabel: _cta.getAttribute( 'data-ga-label')
+      })
+    });
+
+  };
 </script>

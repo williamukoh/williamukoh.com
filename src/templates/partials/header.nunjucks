@@ -9,17 +9,7 @@
             </svg>
         </a>
 
-        <div class="nav-wrapper">
-
-            <nav role="navigation" class="primary-nav nav">
-                <ul>
-                    <li><a href="/?ref=home">home</a>
-                    <li><a href="/about.html">about me</a>
-                    <li><a href="/resume.html">resume (pdf)</a>
-                </ul>
-            </nav>
-
-        </div>
+        {% include "partials/nav.nunjucks" %}
 
     </header>
 

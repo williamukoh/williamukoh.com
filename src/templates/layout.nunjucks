@@ -11,6 +11,8 @@
         {# <link rel="apple-touch-icon" href="apple-touch-icon.png"> #}
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/build.min.css">
+
+        {% block head_content %} {% endblock %}
         
     </head>
     <body class="{{ body_class }}">

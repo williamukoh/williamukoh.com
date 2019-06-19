@@ -285,11 +285,13 @@ footer {
   margin-right: auto;
   width:100%;
 
+  @include breakpoint('(min-width: 64em)') {
+    max-width: 900px;
+    padding: 0;
+  }
+
   @include breakpoint('(min-width: 70em) and ( min-height:650px)') {
-
       max-width: 1100px;
-      padding: 0;
-
   }
 
 }
@@ -415,7 +417,7 @@ ul.social-icons {
   
 }
 
-.about {
+.page {
 
   .page-content {
 
@@ -501,6 +503,32 @@ ul.social-icons {
 
   ul.social-icons {    
     text-align: center;
+  }
+
+}
+
+.error {
+  
+  .page-content {
+    position: absolute;
+    transform: translate( -50%, -50% );
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+  }
+
+}
+
+.error, .resume, .portfolio {
+
+  .footer-wrapper {
+    position: fixed;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
   }
 
 }

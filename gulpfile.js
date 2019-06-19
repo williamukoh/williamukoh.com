@@ -31,7 +31,7 @@ const
   nunjucksRender = require('gulp-nunjucks-render'),
   cachebust = require('gulp-cache-bust'),
   ext_replace = require('gulp-ext-replace'),
-  replace = require('gulp-string-replace');
+  replace = require('gulp-replace');
 
   // development mode?
   devBuild = (process.env.NODE_ENV !== 'production'),
@@ -182,14 +182,11 @@ gulp.task('nunjucks', function () {
     // Renders template with nunjucks
     .pipe(nunjucksRender({
       path: [folder.src + 'templates']
-    }));
+  }));
 
+  // output files build folder
+  return _gulp.pipe(gulp.dest(folder.local));
 
-    if ( !devBuild )
-      _gulp = _gulp.pipe( replace( '@@date', new Date() ) );
-    
-      // output files build folder
-    return _gulp.pipe(gulp.dest(folder.local));
 });
 
 // browser-sync
@@ -246,10 +243,13 @@ gulp.task( 'rename:to-php', function(cb) {
 
   gulp.src( folder.local + '*.html')
       .pipe( replace( '<!-- @@ga -->', _ga ) )
+      .pipe( replace( '@@date', new Date() ) )
+      .pipe( replace( /"\/(.+)\.(html)"/g , '"/$1.php"' ) )
       .pipe( ext_replace('.php') )
       .pipe( gulp.dest( folder.dist ) );
   
   cb();
+
 
 });
 
