@@ -20,19 +20,23 @@ ready( function() {
 
     
 
-
-    _menu.addEventListener( 'click', function($e) {
-        _rootElem.classList.toggle( 'menu-open' );
-        $e.preventDefault();
-        $e.stopPropagation();
-    }, false );
-
-    document.querySelector('.page-wrapper').addEventListener( 'click', function($e) {
-        if ( _rootElem.classList.contains( 'menu-open' ) ) {
-            triggerEvent( 'click', _menu );
-            //$e.preventDefault();
-        }
+    if ( _menu ) {
         
-    }, false);
+        _menu.addEventListener( 'click', function($e) {
+            _rootElem.classList.toggle( 'menu-open' );
+            $e.preventDefault();
+            $e.stopPropagation();
+        }, false );
+
+        document.querySelector('.page-wrapper').addEventListener( 'click', function($e) {
+            if ( _rootElem.classList.contains( 'menu-open' ) ) {
+                triggerEvent( 'click', _menu );
+                //$e.preventDefault();
+            }
+            
+        }, false);
+    }
+
+    
     
 })
