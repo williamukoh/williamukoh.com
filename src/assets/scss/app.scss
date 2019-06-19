@@ -290,6 +290,21 @@ footer {
     padding: 0;
   }
 
+}
+
+.header-wrapper {
+
+  position: relative;
+
+  @include breakpoint('(min-width: 70em) and ( min-height:650px)') {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+.main-wrapper, .header-wrapper {
+
   @include breakpoint('(min-width: 70em) and ( min-height:650px)') {
       max-width: 1100px;
   }

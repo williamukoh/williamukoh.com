@@ -1,4 +1,4 @@
-<!-- Last generated: Wed Jun 19 2019 21:53:51 GMT+0100 (WAT)-->
+<!-- Last generated: Wed Jun 19 2019 22:06:46 GMT+0100 (WAT)-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
@@ -10,7 +10,7 @@
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1560977480222">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560977697709">
 
         
     <meta http-equiv="refresh" content="3;url=/downloads/williamukoh-resume-v2.pdf" />
@@ -95,7 +95,7 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1560977480222"></script>
+        <script src="assets/js/build.min.js?t=1560977697709"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-602563-34"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
