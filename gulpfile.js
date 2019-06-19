@@ -31,7 +31,7 @@ const
   nunjucksRender = require('gulp-nunjucks-render'),
   cachebust = require('gulp-cache-bust'),
   ext_replace = require('gulp-ext-replace'),
-  replace = require( 'gulp-string-replace' );
+  replace = require('gulp-replace');
 
   // development mode?
   devBuild = (process.env.NODE_ENV !== 'production'),
@@ -175,18 +175,18 @@ gulp.task('copy:to-dist', function (cb) {
 // nunjucks
 gulp.task('nunjucks', function () {
 
-  var dest = folder.local;
+  var dest = folder.local,
 
   // Gets .html and .nunjucks files in pages
-  return gulp.src(folder.src + 'pages/**/*.+(html|nunjucks|njk)')
+  _gulp = gulp.src( folder.src + 'pages/**/*.+(html|nunjucks|njk)' )
     // Renders template with nunjucks
     .pipe(nunjucksRender({
       path: [folder.src + 'templates']
-    }))
-    // .pipe( newer( dest ))
-    .pipe( replace( '@@date', new Date() ) )
-    // output files build folder
-    .pipe(gulp.dest(folder.local))
+  }));
+
+  // output files build folder
+  return _gulp.pipe(gulp.dest(folder.local));
+
 });
 
 // browser-sync
@@ -198,7 +198,7 @@ gulp.task('browser-sync', function (cb) {
       directory: false,
       index: 'index.html'
     },
-    files: [folder.local + "assets/**/*.css", folder.local + "assets/**/*.js"],
+    files: [folder.local + "*.html", folder.local + "assets/**/*.css", folder.local + "assets/**/*.js"],
     open: false
   }, cb);
 
@@ -212,6 +212,11 @@ gulp.task('clean:assets', function () {
 // clean "dist" directory
 gulp.task('clean:dist', function () {
   return del( folder.dist + '**/*' );
+});
+
+// clean "local" directory
+gulp.task('clean:local', function () {
+  return del( folder.local + '**/*' );
 });
 
 // clean "html" files
@@ -238,15 +243,19 @@ gulp.task( 'rename:to-php', function(cb) {
 
   gulp.src( folder.local + '*.html')
       .pipe( replace( '<!-- @@ga -->', _ga ) )
+      .pipe( replace( '@@date', new Date() ) )
+      .pipe( replace( /"\/(.+)\.(html)"/g , '"/$1.php"' ) )
       .pipe( ext_replace('.php') )
       .pipe( gulp.dest( folder.dist ) );
   
   cb();
 
+
 });
 
 // watch changes to gulpfile.js
 gulp.task('auto-reload', function () {
+
   var p;
 
   gulp.watch('gulpfile.js', spawnChildren);
@@ -263,6 +272,7 @@ gulp.task('auto-reload', function () {
       stdio: 'inherit'
     });
   }
+  
 });
 
 // watch for changes
@@ -286,11 +296,11 @@ gulp.task('watch', function () {
 
   // css changes
   // gulp.watch(folder.src + 'assets/css/**/*.css', ['css']);
-  gulp.watch(folder.src + 'assets/css/**/*.css', gulp.series('sass+css', 'html'));
+  gulp.watch(folder.src + 'assets/css/**/*.css', gulp.series('sass+css'));
 
   // watch for sass changes
   // gulp.watch(folder.src + 'assets/scss/**/*', ['sass']);
-  gulp.watch(folder.src + 'assets/scss/**/*.scss', gulp.series('sass+css', 'html'));
+  gulp.watch(folder.src + 'assets/scss/**/*.scss', gulp.series('sass+css'));
 
   // watch for changes to HTML in output folder
   gulp.watch(folder.dist + "**/*.html").on('all', browserSync.reload);
@@ -298,7 +308,7 @@ gulp.task('watch', function () {
 });
 
 // building for testing server locally
-gulp.task('build', gulp.series('clean:html', 'clean:assets', 'nunjucks', 'js', 'sass+css', 'copy', 'html', 'browser-sync', 'watch'));
+gulp.task('build', gulp.series('clean:local','clean:html', 'clean:assets', 'nunjucks', 'js', 'sass+css', 'copy', 'html', 'browser-sync', 'watch'));
 
 // deploy for production
 gulp.task('deploy', gulp.series( 'clean:dist', 'copy:to-dist', 'rename:to-php' ) );

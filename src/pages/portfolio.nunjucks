@@ -1,0 +1,36 @@
+<!-- index.nunjucks -->
+<!-- stuuf here -->
+{% set body_class = "portflio page" %}
+{% set page_title = "Portfolio" %}
+
+{% extends "layout.nunjucks" %}
+
+{% block head_content %}
+    <meta http-equiv="refresh" content="3;url=/downloads/williamukoh-portfolio.pdf" />
+{% endblock %}
+
+{% block content %}
+        
+    <div class="main-wrapper">
+
+        <main role="main" id="main">
+
+            <div class="page-content">
+
+                <article> 
+
+                    <h1 class="page-title">Portfolio</h1>
+
+                    <div class="is-size-4">
+                        <p>If download doesn't start, <a href="/downloads/williamukoh-portfolio.pdf">click here</a>...</p>
+                    </div>
+                
+                </article>
+            
+            </div>
+            
+        </main>
+
+    </div>
+
+{% endblock %}

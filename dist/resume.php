@@ -4,18 +4,20 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Page Not Found</title>
+        <title>Resume</title>
         <meta name="description" content="A Product Designer and Developer working at the crossroads of design, software technology and business.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1560977697669">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1560977697709">
 
-         
+        
+    <meta http-equiv="refresh" content="3;url=/downloads/williamukoh-resume-v2.pdf" />
+
         
     </head>
-    <body class="error page">
+    <body class="resume page">
 
         <div class="page-wrapper">
 
@@ -57,12 +59,17 @@
 
             <div class="page-content">
 
-                <h1 class="has-text-weight-bold is-uppercase has-text-danger">Page Not Found</h1>
-                <p>The link that brought you here may be broken or the page may have been removed.</p>
-                <p><a href="/?ref=404">Visit the Home Page</a></p>
+                <article> 
 
+                    <h1 class="page-title">Resume</h1>
+
+                    <div class="is-size-4">
+                        <p>If download doesn't start, <a href="/downloads/williamukoh-resume-v2.pdf">click here</a>...</p>
+                    </div>
+                
+                </article>
+            
             </div>
-
             
         </main>
 
@@ -88,7 +95,7 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1560977697669"></script>
+        <script src="assets/js/build.min.js?t=1560977697709"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-602563-34"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

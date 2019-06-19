@@ -1,0 +1,12 @@
+<div class="nav-wrapper">
+
+    <nav role="navigation" class="primary-nav nav">
+        <ul>
+            <li><a href="/?ref=home">home</a>
+            <li><a href="/about.html">about</a>
+            <li><a href="/resume.html">resume</a>
+            <li><a href="mailto:me@williamukoh.com">contact</a>
+        </ul>
+    </nav>
+
+</div>
