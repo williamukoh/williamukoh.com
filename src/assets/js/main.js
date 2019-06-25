@@ -1,3 +1,5 @@
+import Darkmode from 'darkmode-js';
+
 const ready = (fn) => {
     if (document.readyState != 'loading') {
         fn();
@@ -7,6 +9,12 @@ const ready = (fn) => {
 }
 
 ready( function() {
+
+    new Darkmode({
+        label: '🌓',
+        bottom: '40px', // default: '32px'
+        right: '20px', // default: '32px'
+    }).showWidget();
 
     const _menu = document.querySelector('a.menu-trigger'),
           _rootElem = document.documentElement,

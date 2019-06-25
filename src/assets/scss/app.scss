@@ -49,6 +49,10 @@ body {
   width: 100%;
   overflow-x: hidden;
   height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-stretch: normal;
 
   @include breakpoint('(min-width: 70em) and ( min-height:650px)') {
 
@@ -119,6 +123,7 @@ h1 {
 p {
   margin: 0 0 1em;
   padding: 0;
+  // font-weight: 400;
 }
 
 main {
@@ -546,4 +551,45 @@ ul.social-icons {
     width: 100%;
   }
 
+}
+
+/* Dark Mode custom styles */
+.darkmode-toggle {
+  z-index: 999;
+}
+
+.darkmode--activated  {
+  
+  color: #fff;
+
+  h1,h2,h3,h4,h5,
+  a,
+  figcaption,
+  ul,
+  nav.primary-nav ul a,
+  footer a,
+  .leading {
+    color: #fff !important;
+  }
+  .bg {
+    circle {
+      opacity: 0.9;
+      color: white;
+      mix-blend-mode: lighten;
+    }
+  }
+}
+.darkmode--activated nav.primary-nav ul a,
+.darkmode--activated footer a {
+  &:hover {
+    color: rgba(255,255,255,0.8);
+  }
+  &:active {
+    color: #000 !important;
+  }
+}
+.darkmode--activated footer svg,
+.darkmode--activated .menu-trigger svg,
+.darkmode--activated ul.social-icons svg {
+  filter: invert(100);
 }
