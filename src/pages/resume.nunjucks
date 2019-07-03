@@ -6,7 +6,7 @@
 {% extends "layout.nunjucks" %}
 
 {% block head_content %}
-    <meta http-equiv="refresh" content="3;url=/downloads/williamukoh-resume-v2.pdf" />
+    <meta http-equiv="refresh" content="1;url=/downloads/williamukoh-resume-v2.pdf" />
 {% endblock %}
 
 {% block content %}

@@ -1,16 +1,67 @@
-<!-- Last generated: Tue Jun 25 2019 14:34:01 GMT+0100 (WAT)-->
+<!-- Last generated: Wed Jul 03 2019 20:37:23 GMT+0100 (WAT)-->
 <!doctype html>
 <html class="no-js" lang="en-NG">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+
         <title>Page Not Found</title>
-        <meta name="description" content="A Product Designer and Developer working at the crossroads of design, software technology and business.">
+        
+        <meta name="description" content="I'm a Product Designer and Developer working at the crossroads of design, software technology and business.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         
+        <meta name="description" content="I'm a Product Designer and Developer working at the crossroads of design, software technology and business.">
+        <meta name="image" content="https://williamukoh.com/assets/img/og/banner_1200x630.png">
+        
+        <meta itemprop="name" content="Page Not Found">
+        <meta itemprop="description" content="I'm a Product Designer and Developer working at the crossroads of design, software technology and business.">
+        <meta itemprop="image" content="https://williamukoh.com/assets/img/og/banner_1200x630.png">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Page Not Found">
+        <meta name="twitter:description" content="I'm a Product Designer and Developer working at the crossroads of design, software technology and business.">
+        <meta name="twitter:site" content="@williamukoh">
+        <meta name="twitter:creator" content="@williamukoh">
+        <meta name="twitter:image:src" content="https://williamukoh.com/assets/img/og/banner_1024x512.png">
+
+        <meta name="og:title" content="Page Not Found">
+        <meta name="og:description" content="I'm a Product Designer and Developer working at the crossroads of design, software technology and business.">
+        <meta name="og:image" content="https://williamukoh.com/assets/img/og/banner_1200x630.png">
+        <meta name="og:url" content="https://williamukoh.com">
+        <meta name="og:site_name" content="Page Not Found">
+        <meta name="og:locale" content="en_NG">
+        <meta name="og:type" content="website">
+        <meta name="fb:admins" content="529075280">
+
+        <meta property="og:image" content="https://williamukoh.com/assets/img/og/banner_1200x630.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta property="og:image" content="https://williamukoh.com/assets/img/og/banner_400x400.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="400" />
+
+        <script type='application/ld+json'> 
+        {
+            "@context": "http://www.schema.org",
+            "@type": "person",
+            "name": "William Ukoh",
+            "jobTitle": "Product Designer and Developer",
+            "url": "https://williamukoh.com",
+            "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": " ",
+                    "addressRegion": "Lagos",
+                    "addressCountry": "Nigeria"
+            }
+        }
+        </script>
+
         <link href="//fonts.googleapis.com/css?family=Nunito:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/build.min.css?t=1561467344483">
+        <link rel="stylesheet" href="assets/css/build.min.css?t=1562182466370">
 
          
         
@@ -88,7 +139,7 @@
 
         </div>
 
-        <script src="assets/js/build.min.js?t=1561467344483"></script>
+        <script src="assets/js/build.min.js?t=1562182466370"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-602563-34"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
