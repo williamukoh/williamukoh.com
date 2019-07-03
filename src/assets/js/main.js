@@ -1,5 +1,8 @@
 import Darkmode from 'darkmode-js';
 
+document.documentElement.classList.toggle('no-js');
+document.documentElement.classList.toggle('js'); 
+
 const ready = (fn) => {
     if (document.readyState != 'loading') {
         fn();
